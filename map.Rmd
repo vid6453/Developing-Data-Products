@@ -1,0 +1,22 @@
+---
+title: "Map"
+output: html_document
+---
+
+```{r, echo=TRUE}
+library(magrittr)
+library(leaflet)
+
+```
+###creating map
+
+Creating a link to JHU using leaflet and markers
+```{r,echo=TRUE}
+my_map <- leaflet() %>%
+  addTiles()
+JHU <- c("<a href= 'https://www.jhu.edu/' >JHU</a>")
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=54.735, lng=29.022, popup = JHU) %>%
+  addLegend(labels = Sys.Date(),colors = c("white"))
+```
